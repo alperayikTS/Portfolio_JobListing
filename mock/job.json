@@ -1,0 +1,269 @@
+{
+  "job": [
+    {
+      "id": 1,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Frontend Developer React",
+      "description": "Wij zoeken een ervaren Frontend Developer met kennis van React, TypeScript en moderne UI frameworks.",
+      "hourlyRateMin": 65,
+      "hourlyRateMax": 85,
+      "hoursPerWeek": 40,
+      "location": "Amsterdam",
+      "isRemote": true,
+      "startDate": "2026-06-01",
+      "endDate": "2026-12-31",
+      "skillIds": ["react", "typescript", "html", "css"],
+      "toolIds": ["jira", "figma", "github"],
+      "client": {
+        "companyName": "Tulipsoft",
+        "isPremium": true
+      },
+      "skills": [
+        { "name": "React" },
+        { "name": "TypeScript" },
+        { "name": "CSS" }
+      ]
+    },
+    {
+      "id": 2,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Backend Developer Node.js",
+      "description": "Backend Developer gezocht voor REST APIs en microservices.",
+      "hourlyRateMin": 70,
+      "hourlyRateMax": 95,
+      "hoursPerWeek": 36,
+      "location": "Rotterdam",
+      "isRemote": false,
+      "startDate": "2026-07-01",
+      "endDate": "2027-01-31",
+      "skillIds": ["nodejs", "postgresql"],
+      "toolIds": ["postman", "docker"],
+      "client": {
+        "companyName": "CodeWave",
+        "isPremium": false
+      },
+      "skills": [
+        { "name": "Node.js" },
+        { "name": "PostgreSQL" }
+      ]
+    },
+    {
+      "id": 3,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "DevOps Engineer",
+      "description": "DevOps Engineer voor CI/CD pipelines en Kubernetes beheer.",
+      "hourlyRateMin": 80,
+      "hourlyRateMax": 110,
+      "hoursPerWeek": 40,
+      "location": "Utrecht",
+      "isRemote": true,
+      "startDate": "2026-06-15",
+      "endDate": "2026-12-15",
+      "skillIds": ["kubernetes", "aws"],
+      "toolIds": ["jenkins", "aws"],
+      "client": {
+        "companyName": "CloudBase",
+        "isPremium": true
+      },
+      "skills": [
+        { "name": "Kubernetes" },
+        { "name": "AWS" }
+      ]
+    },
+    {
+      "id": 4,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Data Analyst",
+      "description": "Data Analyst met ervaring in SQL en Power BI.",
+      "hourlyRateMin": 55,
+      "hourlyRateMax": 75,
+      "hoursPerWeek": 32,
+      "location": "Eindhoven",
+      "isRemote": true,
+      "startDate": "2026-08-01",
+      "endDate": "2027-02-01",
+      "skillIds": ["sql", "powerbi"],
+      "toolIds": ["excel", "azure"],
+      "client": {
+        "companyName": "DataMasters",
+        "isPremium": false
+      },
+      "skills": [
+        { "name": "SQL" },
+        { "name": "Power BI" }
+      ]
+    },
+    {
+      "id": 5,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Flutter Developer",
+      "description": "Flutter developer voor mobiele apps.",
+      "hourlyRateMin": 60,
+      "hourlyRateMax": 85,
+      "hoursPerWeek": 40,
+      "location": "Den Haag",
+      "isRemote": false,
+      "startDate": "2026-06-20",
+      "endDate": "2026-11-30",
+      "skillIds": ["flutter", "dart"],
+      "toolIds": ["firebase", "gitlab"],
+      "client": {
+        "companyName": "Appify",
+        "isPremium": false
+      },
+      "skills": [
+        { "name": "Flutter" },
+        { "name": "Dart" }
+      ]
+    },
+    {
+      "id": 6,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "AI Engineer",
+      "description": "AI Engineer voor machine learning oplossingen.",
+      "hourlyRateMin": 90,
+      "hourlyRateMax": 130,
+      "hoursPerWeek": 40,
+      "location": "Amsterdam",
+      "isRemote": true,
+      "startDate": "2026-07-10",
+      "endDate": "2027-07-10",
+      "skillIds": ["python", "tensorflow"],
+      "toolIds": ["jupyter", "github"],
+      "client": {
+        "companyName": "NeuroTech",
+        "isPremium": true
+      },
+      "skills": [
+        { "name": "Python" },
+        { "name": "TensorFlow" }
+      ]
+    },
+    {
+      "id": 7,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "QA Automation Engineer",
+      "description": "QA Engineer voor testautomatisering.",
+      "hourlyRateMin": 50,
+      "hourlyRateMax": 70,
+      "hoursPerWeek": 36,
+      "location": "Groningen",
+      "isRemote": true,
+      "startDate": "2026-06-05",
+      "endDate": "2026-12-05",
+      "skillIds": ["selenium", "cypress"],
+      "toolIds": ["jira", "github"],
+      "client": {
+        "companyName": "QualityFirst",
+        "isPremium": false
+      },
+      "skills": [
+        { "name": "Selenium" },
+        { "name": "Cypress" }
+      ]
+    },
+    {
+      "id": 8,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Cyber Security Specialist",
+      "description": "Security specialist voor pentesting en audits.",
+      "hourlyRateMin": 85,
+      "hourlyRateMax": 120,
+      "hoursPerWeek": 40,
+      "location": "Arnhem",
+      "isRemote": false,
+      "startDate": "2026-09-01",
+      "endDate": "2027-03-01",
+      "skillIds": ["cybersecurity", "networking"],
+      "toolIds": ["wireshark", "linux"],
+      "client": {
+        "companyName": "SecureNet",
+        "isPremium": true
+      },
+      "skills": [
+        { "name": "Cybersecurity" },
+        { "name": "Networking" }
+      ]
+    },
+    {
+      "id": 9,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Product Owner",
+      "description": "Product Owner met Agile ervaring.",
+      "hourlyRateMin": 75,
+      "hourlyRateMax": 100,
+      "hoursPerWeek": 32,
+      "location": "Leiden",
+      "isRemote": true,
+      "startDate": "2026-06-12",
+      "endDate": "2026-12-31",
+      "skillIds": ["scrum", "agile"],
+      "toolIds": ["jira", "miro"],
+      "client": {
+        "companyName": "SprintWorks",
+        "isPremium": false
+      },
+      "skills": [
+        { "name": "Scrum" },
+        { "name": "Agile" }
+      ]
+    },
+    {
+      "id": 10,
+      "clientProfileId": "",
+      "siteId": "",
+      "title": "Full Stack Developer",
+      "description": "Full Stack Developer met Vue en Laravel ervaring.",
+      "hourlyRateMin": 70,
+      "hourlyRateMax": 95,
+      "hoursPerWeek": 40,
+      "location": "Breda",
+      "isRemote": true,
+      "startDate": "2026-07-15",
+      "endDate": "2027-01-15",
+      "skillIds": ["vuejs", "laravel"],
+      "toolIds": ["docker", "phpstorm"],
+      "client": {
+        "companyName": "Stackify",
+        "isPremium": true
+      },
+      "skills": [
+        { "name": "Vue.js" },
+        { "name": "Laravel" }
+      ]
+    }
+  ],
+  "skills": [
+    { "id": "react", "name": "React" },
+    { "id": "typescript", "name": "TypeScript" },
+    { "id": "nodejs", "name": "Node.js" },
+    { "id": "postgresql", "name": "PostgreSQL" },
+    { "id": "kubernetes", "name": "Kubernetes" },
+    { "id": "aws", "name": "AWS" },
+    { "id": "sql", "name": "SQL" },
+    { "id": "powerbi", "name": "Power BI" },
+    { "id": "flutter", "name": "Flutter" },
+    { "id": "dart", "name": "Dart" }
+  ],
+  "tools": [
+    { "id": "jira", "name": "Jira" },
+    { "id": "figma", "name": "Figma" },
+    { "id": "github", "name": "GitHub" },
+    { "id": "postman", "name": "Postman" },
+    { "id": "docker", "name": "Docker" },
+    { "id": "jenkins", "name": "Jenkins" },
+    { "id": "excel", "name": "Excel" },
+    { "id": "azure", "name": "Azure" },
+    { "id": "firebase", "name": "Firebase" },
+    { "id": "gitlab", "name": "GitLab" }
+  ]
+}
