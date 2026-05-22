@@ -23,7 +23,6 @@ onMounted(async () => {
 
   local.value = JSON.parse(localStorage.getItem('jobs')) || assignments.value; // local wordt gebruik om terug te vallen voor alle data en jobs wordt gebruikt om te filteren searchen etc zonder dat ik constant opnieuw de jobs data moet callen
   jobs.value = local.value
-  console.log(jobs.value);
 
   setTimeout(() => {
     loading.value = true;
@@ -65,6 +64,10 @@ const emptyReturn = computed(() => {
   if (jobs.value.length === 0) {
     return 'Geen opdrachten gevonden';
   }
+})
+
+watch(jobs, (newVal, oldVal) => {
+  localStorage.setItem('jobs', JSON.stringify(newVal));
 })
 </script>
 

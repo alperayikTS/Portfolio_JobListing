@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  middleware: () => navigateTo('/zoekfunctie')
+  middleware: () => navigateTo('/Login')
 })
 </script>
 

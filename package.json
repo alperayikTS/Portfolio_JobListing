@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@auth0/auth0-nuxt": "^1.1.0",
     "@tailwindcss/vite": "^4.3.0",
     "@vee-validate/nuxt": "^4.15.1",
     "nuxt": "^4.4.6",

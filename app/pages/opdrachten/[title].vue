@@ -3,7 +3,6 @@ const activeTab = useState('activeTab', () => '');
 const route = useRoute();
 const opdrachten = ref([]);
 const opdracht = ref({});
-const clientCompany = ref('')
 
 onMounted(() => {
   activeTab.value = '';
