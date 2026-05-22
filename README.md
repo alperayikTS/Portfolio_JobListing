@@ -140,6 +140,13 @@ Dit bootst een echte backend/API structuur na.
 - Overzicht van geplaatste opdrachten bekijken
 
 ---
+# Authenticatie / Inloggen
+
+Wanneer de applicatie wordt gestart, wordt de gebruiker eerst doorgestuurd naar de Auth0 login pagina.
+
+Voor het testen van de applicatie kan hier eenvoudig een testaccount worden aangemaakt en gebruikt om in te loggen.
+
+Na het inloggen wordt de gebruiker automatisch doorgestuurd naar de zoekfunctie pagina van het platform.
 
 # Zoekfunctionaliteit
 
