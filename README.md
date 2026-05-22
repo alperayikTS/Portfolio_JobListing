@@ -63,6 +63,8 @@ Om de applicatie toch volledig werkend te houden heb ik een mock API opgezet met
 
 Hierdoor kunnen alle functionaliteiten getest worden zonder beveiligingsrisico’s.
 
+Daarnaast is er een `.env.example` bestand toegevoegd met demo Auth0 configuratie waardes. Deze demo waardes maken het mogelijk om in te loggen en de authenticatie functionaliteiten te testen zonder gebruik te maken van de originele stageomgeving of bedrijfsgegevens.
+
 ---
 
 # Mock API starten
@@ -105,7 +107,8 @@ Voorbeeld:
 
 Dit bootst een echte backend/API structuur na.
 
-------
+---
+
 # Gebruikte Tech Stack
 
 ## Frontend
@@ -123,7 +126,7 @@ Dit bootst een echte backend/API structuur na.
 ## Mock API
 - json-server
 
------
+---
 
 # Functionaliteiten
 
