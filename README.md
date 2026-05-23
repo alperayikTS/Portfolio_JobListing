@@ -67,34 +67,6 @@ Daarnaast is er een `.env.example` bestand toegevoegd met demo Auth0 configurati
 
 ---
 
-# Mock API starten
-
-Start eerst de mock server:
-
-```bash
-npm run mock
-```
-
-Dit start de mock API met het bestand:
-
-```txt
-job.json
-```
-
-In dit bestand zitten:
-
-- Jobs
-- Skills
-- Tools
-
-Daarna start je de Nuxt applicatie:
-
-```bash
-npm run dev
-```
-
----
-
 # Waarom skills en tools apart zijn opgeslagen
 
 De `skills` en `tools` zijn apart opgeslagen omdat deze in de originele API ook als IDs werden gebruikt.
@@ -148,7 +120,7 @@ Dit bootst een echte backend/API structuur na.
 
 Wanneer de applicatie wordt gestart, wordt de gebruiker eerst doorgestuurd naar de Auth0 login pagina.
 
-Voor het testen van de applicatie kan hier eenvoudig een testaccount worden aangemaakt en gebruikt om in te loggen.
+Voor het testen van de applicatie kan eenvoudig een testaccount worden aangemaakt en gebruikt om in te loggen.
 
 Na het inloggen wordt de gebruiker automatisch doorgestuurd naar de zoekfunctie pagina van het platform.
 
@@ -187,14 +159,16 @@ Er zijn onder andere testen gemaakt voor:
 - Zoekfunctionaliteit
 - Opdrachten plaatsen
 
-De testbestanden:
+## Testbestanden
 
 ```txt
 opdrachtplaatsen.cy.js
 zoekfunctie.cy.js
 ```
 
-## Cypress testen uitvoeren
+---
+
+# Cypress testen uitvoeren
 
 Start eerst de development server:
 
@@ -216,8 +190,6 @@ npx cypress open
 
 ## Beschikbare testen
 
-De volgende testen kunnen uitgevoerd worden:
-
 - `zoekfunctie.cy.js`
 - `opdrachtplaatsen.cy.js`
 
@@ -227,22 +199,59 @@ Klik op een testbestand om de testen automatisch uit te voeren.
 
 # Installatie
 
-## Dependencies installeren
+## 1. Dependencies installeren
 
 ```bash
 npm install
 ```
 
-## Mock server starten
+## 2. Environment variables instellen
+
+Maak eerst een `.env` bestand aan op basis van `.env.example`.
+
+Bijvoorbeeld:
+
+```bash
+cp .env.example .env
+```
+
+Of kopieer handmatig `.env.example` naar `.env`.
+
+Hierdoor worden de demo Auth0 configuraties correct geladen.
+
+---
+
+## 3. Mock server starten
 
 ```bash
 npm run mock
 ```
 
-## Development server starten
+Dit start de mock API met het bestand:
+
+```txt
+job.json
+```
+
+In dit bestand zitten:
+- Jobs
+- Skills
+- Tools
+
+---
+
+## 4. Development server starten
 
 ```bash
 npm run dev
+```
+
+---
+
+## 5. Applicatie openen
+
+```txt
+http://localhost:3000
 ```
 
 ---
