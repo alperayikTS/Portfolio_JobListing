@@ -48,12 +48,12 @@ const onSubmit = async (values) => {
   if (rol !== 'admin' && rol !== 'client') return;
 
   const body = {
-    client: { // client wordt later automatisch op basis van je account toegevoegd aan de opdracht die je aanmaakt
+    client: {
       companyName: 'TulipsoftTest',
-      isPremium: Boolean(true), // Dit wordt ook besloten op basis van je account of je een abbo hebt of niet voor nu laat ik het op true
+      isPremium: Boolean(true),
     },
-    clientProfileId: '', // Clientid wordt meegegeven wanneer je inlogd met auth0
-    siteId: '', // SiteId is een deel van de API (die ik niet kan delen dus daarom staat het leeg)
+    clientProfileId: '',
+    siteId: '',
     title: values.positieTitel,
     description: values.positieBeschrijving,
     hourlyRateMin: Number(values.salarisMin),
@@ -63,13 +63,13 @@ const onSubmit = async (values) => {
     isRemote: Boolean(values.remote),
     startDate: values.datumStart,
     endDate: values.datumEnd,
-    skillIds: values.skills?.filter(Boolean) || [], // zijn eigenlijk ids die worden meegegeven aan de api geldt ook voor tools
+    skillIds: values.skills?.filter(Boolean) || [],
     skills: values.skills?.map((skill) => ({name: skill})) || [],
     toolIds: values.tools?.filter(Boolean) || [],
   }
 
   try {
-    opgeslagenData.value.push(body); // probeer straks bowy om error message te testen
+    opgeslagenData.value.push(body);
     opdrachten.value = true;
     openModal();
   } catch (e) {
@@ -114,7 +114,6 @@ watch(opgeslagenData, (newVal, oldVal) => {
 
   <div v-if="!loading" class="flex justify-center p-10 text-slate-500">
     <h1 class="flex items-center gap-3">Laden...
-      <!--   spinner logo   -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7" viewBox="0 0 200 200">
         <radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)">
           <stop offset="0" stop-color="#E4E4E4"></stop>
@@ -134,7 +133,6 @@ watch(opgeslagenData, (newVal, oldVal) => {
     </h1>
   </div>
 
-  <!-- form -->
   <div class="mx-auto w-full max-w-5xl p-4 sm:p-6" v-else>
     <h1 class="mb-6 text-2xl sm:text-3xl font-bold text-slate-100">
       Opdracht-plaatsen
@@ -152,80 +150,114 @@ watch(opgeslagenData, (newVal, oldVal) => {
 
         <label>* Positie titel:</label>
         <Field
+            id="title"
             name="positieTitel"
             :rules="required"
             type="text"
             placeholder="Positie titel..."
             class="mt-2 w-full bg-slate-600 p-2"
         />
-        <ErrorMessage name="positieTitel" class="mt-1 mb-3 block text-red-400"/>
+        <ErrorMessage
+            id="titleError"
+            name="positieTitel"
+            class="mt-1 mb-3 block text-red-400"
+        />
 
         <label class="mt-5 block">* Beschrijving:</label>
         <Field
+            id="beschrijving"
             name="positieBeschrijving"
             :rules="required"
             as="textarea"
             placeholder="Beschrijving..."
             class="mt-2 w-full bg-slate-600 p-2 min-h-28"
         />
-        <ErrorMessage name="positieBeschrijving" class="mt-1 mb-3 block text-red-400"/>
+        <ErrorMessage
+            name="positieBeschrijving"
+            class="mt-1 mb-3 block text-red-400"
+        />
 
         <label class="mt-5 block">Uren:</label>
         <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
+
           <div>
             <label>* Min uurloon €:</label>
             <Field
+                id="salarisMin"
                 name="salarisMin"
                 :rules="[required, positive]"
                 type="number"
                 placeholder="€30"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="salarisMin" class="mt-1 block text-red-400"/>
+            <ErrorMessage
+                id="negativeError"
+                name="salarisMin"
+                class="mt-1 block text-red-400"
+            />
           </div>
 
           <div>
             <label>* Max uurloon €:</label>
             <Field
+                id="salarisMax"
                 name="salarisMax"
                 :rules="[required, positive]"
                 type="number"
                 placeholder="€35"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="salarisMax" class="mt-1 block text-red-400"/>
+            <ErrorMessage
+                name="salarisMax"
+                class="mt-1 block text-red-400"
+            />
           </div>
 
           <div>
             <label>* Uren per week:</label>
             <Field
+                id="urenPerWeek"
                 name="urenPerWeek"
                 :rules="[required, positive]"
                 type="number"
                 placeholder="Uren"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="urenPerWeek" class="mt-1 block text-red-400"/>
+            <ErrorMessage
+                name="urenPerWeek"
+                class="mt-1 block text-red-400"
+            />
           </div>
+
         </div>
 
         <label class="mt-5 block">Locatie:</label>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+
           <div>
             <label>* Stad / plaats:</label>
+
             <Field
+                id="locatie"
                 name="locatie"
                 :rules="required"
                 type="text"
                 placeholder="Locatie"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="locatie" class="mt-1 block text-red-400"/>
+
+            <ErrorMessage
+                name="locatie"
+                class="mt-1 block text-red-400"
+            />
           </div>
 
           <div>
             <label>* Werkvorm:</label>
+
             <Field
+                id="onsite"
                 name="remote"
                 :rules="required"
                 as="select"
@@ -235,39 +267,63 @@ watch(opgeslagenData, (newVal, oldVal) => {
               <option value="true">Remote</option>
               <option value="false">On-site</option>
             </Field>
-            <ErrorMessage name="remote" class="mt-1 block text-red-400"/>
+
+            <ErrorMessage
+                name="remote"
+                class="mt-1 block text-red-400"
+            />
           </div>
+
         </div>
 
         <label class="mt-5 block">Datum:</label>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+
           <div>
             <label>* Startdatum</label>
+
             <Field
+                id="dateStart"
                 name="datumStart"
                 :rules="required"
                 type="date"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="datumStart" class="mt-1 block text-red-400"/>
+
+            <ErrorMessage
+                name="datumStart"
+                class="mt-1 block text-red-400"
+            />
           </div>
 
           <div>
             <label>* Einddatum</label>
+
             <Field
+                id="dateEnd"
                 name="datumEnd"
                 :rules="required"
                 type="date"
                 class="mt-2 w-full bg-slate-600 p-2"
             />
-            <ErrorMessage name="datumEnd" class="mt-1 block text-red-400"/>
+
+            <ErrorMessage
+                name="datumEnd"
+                class="mt-1 block text-red-400"
+            />
           </div>
+
         </div>
 
         <label class="mt-5 block">Skills/Tools:</label>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+
           <div class="grid grid-cols-1 gap-3">
+
             <Field
+                id="selectSkills"
                 v-for="n in skillsamount"
                 :key="`skill-${n}`"
                 :name="`skills[${n - 1}]`"
@@ -275,6 +331,7 @@ watch(opgeslagenData, (newVal, oldVal) => {
                 class="w-full bg-slate-600 p-2"
             >
               <option value="">Selecteer skill</option>
+
               <option
                   v-for="item in skillsarray"
                   :key="item.id"
@@ -282,11 +339,15 @@ watch(opgeslagenData, (newVal, oldVal) => {
               >
                 {{ item.name }}
               </option>
+
             </Field>
+
           </div>
 
           <div class="grid grid-cols-1 gap-3">
+
             <Field
+                id="selectTools"
                 v-for="n in toolsamount"
                 :key="`tool-${n}`"
                 :name="`tools[${n - 1}]`"
@@ -294,6 +355,7 @@ watch(opgeslagenData, (newVal, oldVal) => {
                 class="w-full bg-slate-600 p-2"
             >
               <option value="">Selecteer tool</option>
+
               <option
                   v-for="item in toolsarray"
                   :key="item.id"
@@ -301,11 +363,15 @@ watch(opgeslagenData, (newVal, oldVal) => {
               >
                 {{ item.name }}
               </option>
+
             </Field>
+
           </div>
+
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
+
           <button
               v-if="skillsamount > 1 && toolsamount > 1"
               type="button"
@@ -322,19 +388,21 @@ watch(opgeslagenData, (newVal, oldVal) => {
           >
             Voeg skill/tool toe
           </button>
+
         </div>
 
         <button
+            id="submitBtn"
             type="submit"
             class="mt-6 w-full sm:w-auto bg-orange-500 hover:bg-orange-600 transition-colors duration-200 text-white cursor-pointer border border-slate-950 px-5 py-2"
         >
           Submit
         </button>
+
       </div>
     </Form>
   </div>
 
-  <!--  Dialog -->
   <dialog
       ref="dialogRef"
       class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -342,32 +410,50 @@ watch(opgeslagenData, (newVal, oldVal) => {
       rounded-lg bg-slate-800 p-6 sm:p-10 text-white shadow-2xl border-none outline-none backdrop:bg-black/70 backdrop:backdrop-blur-sm"
   >
     <div class="grid grid-cols-1">
+
       <div class="flex justify-center items-center">
+
         <div v-if="svgMsg"
              class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-500">
+
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                stroke="currentColor" class="w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
           </svg>
+
         </div>
 
         <div v-else
              class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-500/20 text-red-500">
+
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                stroke="currentColor" class="w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
+
         </div>
+
       </div>
 
-      <h1 class="flex justify-center text-2xl font-bold">{{ dialogH1 }}</h1>
+      <h1
+          id="successMessage"
+          class="flex justify-center text-2xl font-bold"
+      >
+        {{ dialogH1 }}
+      </h1>
+
       <NuxtLink to="/zoekfunctie" class="flex justify-center mt-4">
+
         <button
             class="m-2 bg-orange-500 hover:bg-orange-600 transition-colors duration-200 text-white text-base cursor-pointer border border-slate-950 p-[10px_20px] border rounded-md"
-        >Home
+        >
+          Home
         </button>
+
       </NuxtLink>
+
     </div>
+
   </dialog>
 </template>
 
