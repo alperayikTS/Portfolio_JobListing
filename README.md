@@ -120,6 +120,9 @@ Dit bootst een echte backend/API structuur na.
 ## Form validatie
 - Vee Validate 4.15.1
 
+## Testing
+- Cypress
+
 ## Build tooling
 - @tailwindcss/vite 4.3.0
 
@@ -140,6 +143,7 @@ Dit bootst een echte backend/API structuur na.
 - Overzicht van geplaatste opdrachten bekijken
 
 ---
+
 # Authenticatie / Inloggen
 
 Wanneer de applicatie wordt gestart, wordt de gebruiker eerst doorgestuurd naar de Auth0 login pagina.
@@ -147,6 +151,8 @@ Wanneer de applicatie wordt gestart, wordt de gebruiker eerst doorgestuurd naar 
 Voor het testen van de applicatie kan hier eenvoudig een testaccount worden aangemaakt en gebruikt om in te loggen.
 
 Na het inloggen wordt de gebruiker automatisch doorgestuurd naar de zoekfunctie pagina van het platform.
+
+---
 
 # Zoekfunctionaliteit
 
@@ -187,6 +193,35 @@ De testbestanden:
 opdrachtplaatsen.cy.js
 zoekfunctie.cy.js
 ```
+
+## Cypress testen uitvoeren
+
+Start eerst de development server:
+
+```bash
+npm run dev
+```
+
+Start daarna Cypress:
+
+```bash
+npx cypress open
+```
+
+## Cypress openen
+
+1. Kies **E2E Testing**
+2. Kies een browser naar keuze
+3. Klik op **Start E2E Testing**
+
+## Beschikbare testen
+
+De volgende testen kunnen uitgevoerd worden:
+
+- `zoekfunctie.cy.js`
+- `opdrachtplaatsen.cy.js`
+
+Klik op een testbestand om de testen automatisch uit te voeren.
 
 ---
 
