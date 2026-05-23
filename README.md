@@ -175,6 +175,11 @@ Start eerst de development server:
 ```bash
 npm run dev
 ```
+Start daarna de mock server:
+
+```bash
+npm run mock
+```
 
 Start daarna Cypress:
 
