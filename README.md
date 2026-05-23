@@ -63,6 +63,8 @@ Om de applicatie toch volledig werkend te houden heb ik een mock API opgezet met
 
 Hierdoor kunnen alle functionaliteiten getest worden zonder beveiligingsrisico’s.
 
+Daarnaast is er een `.env.example` bestand toegevoegd met demo Auth0 configuratie waardes. Deze demo waardes maken het mogelijk om in te loggen en de authenticatie functionaliteiten te testen zonder gebruik te maken van de originele stageomgeving of bedrijfsgegevens.
+
 ---
 
 # Mock API starten
@@ -105,7 +107,8 @@ Voorbeeld:
 
 Dit bootst een echte backend/API structuur na.
 
-------
+---
+
 # Gebruikte Tech Stack
 
 ## Frontend
@@ -117,13 +120,16 @@ Dit bootst een echte backend/API structuur na.
 ## Form validatie
 - Vee Validate 4.15.1
 
+## Testing
+- Cypress
+
 ## Build tooling
 - @tailwindcss/vite 4.3.0
 
 ## Mock API
 - json-server
 
------
+---
 
 # Functionaliteiten
 
@@ -135,6 +141,16 @@ Dit bootst een echte backend/API structuur na.
 ## Opdrachtgever
 - Nieuwe opdrachten plaatsen
 - Overzicht van geplaatste opdrachten bekijken
+
+---
+
+# Authenticatie / Inloggen
+
+Wanneer de applicatie wordt gestart, wordt de gebruiker eerst doorgestuurd naar de Auth0 login pagina.
+
+Voor het testen van de applicatie kan hier eenvoudig een testaccount worden aangemaakt en gebruikt om in te loggen.
+
+Na het inloggen wordt de gebruiker automatisch doorgestuurd naar de zoekfunctie pagina van het platform.
 
 ---
 
@@ -177,6 +193,35 @@ De testbestanden:
 opdrachtplaatsen.cy.js
 zoekfunctie.cy.js
 ```
+
+## Cypress testen uitvoeren
+
+Start eerst de development server:
+
+```bash
+npm run dev
+```
+
+Start daarna Cypress:
+
+```bash
+npx cypress open
+```
+
+## Cypress openen
+
+1. Kies **E2E Testing**
+2. Kies een browser naar keuze
+3. Klik op **Start E2E Testing**
+
+## Beschikbare testen
+
+De volgende testen kunnen uitgevoerd worden:
+
+- `zoekfunctie.cy.js`
+- `opdrachtplaatsen.cy.js`
+
+Klik op een testbestand om de testen automatisch uit te voeren.
 
 ---
 
